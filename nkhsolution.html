@@ -1,11 +1,12 @@
 <!DOCTYPE html>
 <html>
-<title>W3.CSS Template</title>
+<title>NKH Cloud</title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
 <style>
 body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", sans-serif}
 
@@ -15,29 +16,175 @@ body, html {
 }
 
 /* Full height image header */
-.bgimg-1 {
-  background-position: center;
-  background-size: cover;
-  background-image: url("/w3images/mac.jpg");
-  min-height: 100%;
+
+
+/* Slideshow container */
+.slideshow-container {
+  max-width: 1000px;
+  position: relative;
+  margin: auto;
 }
 
-.w3-bar .w3-button {
-  padding: 16px;
+/* Caption text */
+.text {
+  color: #f2f2f2;
+  font-size: 15px;
+  padding: 8px 12px;
+  position: absolute;
+  bottom: 8px;
+  width: 100%;
+  text-align: center;
+}
+
+/* Number text (1/3 etc) */
+.numbertext {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+
+/* The dots/bullets/indicators */
+.dot {
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.active {
+  background-color: #717171;
+}
+
+/* Fading animation */
+.fade {
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 1.5s;
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+#status{
+width: 90%;
+max-width: 500px;
+text-align: center;
+padding: 10px;
+margin: 0 auto;
+border-radius: 8px;
+}
+
+#status.success{
+  background-color:olivedrab;
+  animation: status 4s ease forwards;
+}
+
+#status.error{
+  background-color:red;
+  color: white;
+  animation: status 4s ease forwards;
+}
+
+@keyframes status{
+  0%{
+    opacity: 1;
+    pointer-events: all;
+  }
+  90%{
+    opacity: 1;
+    pointer-events: all;
+  }
+  100%{
+    opacity: 0;
+    pointer-events: all;
+  }
+}
+
+@-webkit-keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+@keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+/* On smaller screens, decrease text size */
+@media only screen and (max-width: 300px) {
+  .text {font-size: 11px}
 }
 </style>
+</head>
 <body>
 
+  
+
+<div class="mySlides fade">
+  <img src="https://www.cambridgeshirechamber.co.uk/wp-content/uploads/2021/11/businessman-using-tech-devices-icons-thin-line-interface_117023-904.jpg" style="min-height:100%; min-width:100%" width=100%; height=600; >
+</div>
+
+<div class="mySlides fade">
+  <img src="http://www.apu.edu.my/sites/default/files/information-technology_680.jpg" style="min-height:100%; min-width:100%" width="100%" height="600">  
+</div>
+
+<div class="mySlides fade">
+  <img src="https://s3.amazonaws.com/mentoring.redesign/s3fs-public/GettyImages-1150198297.jpg" style="min-height:100%; min-width:100%" width="100%" height="600">
+</div>
+
+</div>
+<br>
+
+<div style="text-align:center">
+  <span class="dot"></span> 
+  <span class="dot"></span> 
+  <span class="dot"></span> 
+</div>
+
+<script>
+var slideIndex = 0;
+showSlides();
+
+function showSlides() {
+  var i;
+  var slides = document.getElementsByClassName("mySlides");
+  var dots = document.getElementsByClassName("dot");
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";  
+  }
+  slideIndex++;
+  if (slideIndex > slides.length) {slideIndex = 1}    
+  for (i = 0; i < dots.length; i++) {
+    dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";  
+  dots[slideIndex-1].className += " active";
+  setTimeout(showSlides, 2000); // Change image every 2 seconds
+}
+</script>
+
+</style>
+
 <!-- Navbar (sit on top) -->
-<div class="w3-top">
-  <div class="w3-bar w3-white w3-card" id="myNavbar">
-    <a href="#home" class="w3-bar-item w3-button w3-wide">LOGO</a>
+
+<div class="w3-top pl-3">
+  <div class="w3-bar w3-white w3-card pl-3" id="myNavbar">
+    <img src="https://nkhsolution.com/images/tooplate_image_01.png" style= padding-left:20px alt="Workplace" usemap="#about" width="150" height="50">
+    <map name="about">
+      <area shape="rect" coords="0,0,150,70" alt="Workplace" href="#about">
+    
+    </map>
+
+
     <!-- Right-sided navbar links -->
     <div class="w3-right w3-hide-small">
-      <a href="#about" class="w3-bar-item w3-button">Nasilemak</a>
-      <a href="#team" class="w3-bar-item w3-button"><i class="fa fa-user"></i> kuntabo</a>
-      <a href="#work" class="w3-bar-item w3-button"><i class="fa fa-th"></i> WORK</a>
-      <a href="#pricing" class="w3-bar-item w3-button"><i class="fa fa-usd"></i> PRICING</a>
+      <a href="#about" class="w3-bar-item w3-button">ABOUT</a>
+      <a href="#team" class="w3-bar-item w3-button"><i class="fa fa-user"></i> TEAM</a>
+      <a href="#work" class="w3-bar-item w3-button"><i class="fa fa-th"></i> PRODUCTS</a>
+      <a href="#pricing" class="w3-bar-item w3-button"><i class="fa fa-usd"></i> SERVICES</a>
       <a href="#contact" class="w3-bar-item w3-button"><i class="fa fa-envelope"></i> CONTACT</a>
     </div>
     <!-- Hide right-floated links on small screens and replace them with a menu icon -->
@@ -61,109 +208,111 @@ body, html {
 <!-- Header with full-height image -->
 <header class="bgimg-1 w3-display-container w3-grayscale-min" id="home">
   <div class="w3-display-left w3-text-white" style="padding:48px">
-    <span class="w3-jumbo w3-hide-small">Start something that matters</span><br>
-    <span class="w3-xxlarge w3-hide-large w3-hide-medium">Start something that matters</span><br>
-    <span class="w3-large">Stop wasting valuable time with projects that just isn't you.</span>
-    <p><a href="#about" class="w3-button w3-white w3-padding-large w3-large w3-margin-top w3-opacity w3-hover-opacity-off">Learn more and start today</a></p>
   </div> 
   <div class="w3-display-bottomleft w3-text-grey w3-large" style="padding:24px 48px">
     <i class="fa fa-facebook-official w3-hover-opacity"></i>
     <i class="fa fa-instagram w3-hover-opacity"></i>
     <i class="fa fa-snapchat w3-hover-opacity"></i>
     <i class="fa fa-pinterest-p w3-hover-opacity"></i>
-    <i class="fa fa-twitter w3-hover-opacity"></i>
-    <i class="fa fa-linkedin w3-hover-opacity"></i>
+    <a href="https://www.youtube.com/watch?v=MNn9DnbbZpw" class="fa fa-youtube w3-hover-opacity"></a>
+    <a href="https://my.linkedin.com/in/ngkahho" class="fa fa-linkedin w3-hover-opacity"></a>
   </div>
 </header>
 
 <!-- About Section -->
-<div class="w3-container" style="padding:128px 16px" id="about">
-  <h3 class="w3-center">ABOUT THE COMPANY</h3>
+<div class="w3-container" style="padding:46px 16px" id="about">
+  <h3 class="w3-center">ABOUT NKH Solution</h3>
   <p class="w3-center w3-large">Key features of our company</p>
   <div class="w3-row-padding w3-center" style="margin-top:64px">
     <div class="w3-quarter">
       <i class="fa fa-desktop w3-margin-bottom w3-jumbo w3-center"></i>
       <p class="w3-large">Responsive</p>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore.</p>
+      <p>We respond to clients inquiries quickly and efficiently by explaining the solution in simple terms to clients with limited tech knowledge.</p>
     </div>
     <div class="w3-quarter">
       <i class="fa fa-heart w3-margin-bottom w3-jumbo"></i>
       <p class="w3-large">Passion</p>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore.</p>
+      <p>We are able to solve problems with the latest tech devices, networks, and software on the market.</p>
     </div>
     <div class="w3-quarter">
       <i class="fa fa-diamond w3-margin-bottom w3-jumbo"></i>
-      <p class="w3-large">Design</p>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore.</p>
+      <p class="w3-large">Creative</p>
+      <p>We apply a consistent, logical methodology to the resolution of computer problems in order to produce a satisfactory resolution.</p>
     </div>
     <div class="w3-quarter">
       <i class="fa fa-cog w3-margin-bottom w3-jumbo"></i>
       <p class="w3-large">Support</p>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore.</p>
+      <p>We provide support to our clients by offering solution in their time of need.</p>
     </div>
   </div>
 </div>
 
+<div><iframe width="100%" height="400"
+src="C:\Users\User\Desktop\nasilemak\website\nkhvideo.mp4">
+</iframe>
+</div>
+
+
 <!-- Promo Section - "We know design" -->
-<div class="w3-container w3-light-grey" style="padding:128px 16px">
+<div class="w3-container w3-light-grey" style="padding:46px 16px">
   <div class="w3-row-padding">
     <div class="w3-col m6">
-      <h3>We know design.</h3>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod<br>tempor incididunt ut labore et dolore.</p>
-      <p><a href="#work" class="w3-button w3-black"><i class="fa fa-th"> </i> View Our Works</a></p>
+      <h3>We provide 5’S Service, Consultation & Suggestions.</h3>
+      <p>Services including Private Cloud Platform, Virtual Firewall, Virtual Server, Virtual Storage, Software as a Service (SaaS), Network Infrastructure, Network Security, Server, Storage, IP PBX Phone System, IP CCTV surveillance, IP Door Access and etc...</p>
+      <p><a href="#work" class="w3-button w3-black"><i class="fa fa-th"> </i> View Our Products</a></p>
     </div>
     <div class="w3-col m6">
-      <img class="w3-image w3-round-large" src="/w3images/phone_buildings.jpg" alt="Buildings" width="700" height="394">
+      <img class="w3-image w3-round-large" src="C:\Users\User\Desktop\nasilemak\website\nkhservice.png" alt="Buildings" width="700" height="394">
     </div>
   </div>
 </div>
 
 <!-- Team Section -->
-<div class="w3-container" style="padding:128px 16px" id="team">
-  <h3 class="w3-center">THE TEAM</h3>
-  <p class="w3-center w3-large">The ones who runs this company</p>
-  <div class="w3-row-padding w3-grayscale" style="margin-top:64px">
+<div class="w3-container" style="padding:46px 16px" id="team">
+  <h3 class="w3-center">IT Consultant and Support Team</h3>
+  <p class="w3-center w3-large">The ones who run this company</p>
+  <div class="w3-row-padding " style="margin-top:64px">
     <div class="w3-col l3 m6 w3-margin-bottom">
       <div class="w3-card">
-        <img src="/w3images/team2.jpg" alt="John" style="width:100%">
+        <img src="C:\Users\User\Desktop\nasilemak\website\mrng.jpg" alt="K.H.NG" style="width:100%">
         <div class="w3-container">
-          <h3>John Doe</h3>
-          <p class="w3-opacity">CEO & Founder</p>
-          <p>Phasellus eget enim eu lectus faucibus vestibulum. Suspendisse sodales pellentesque elementum.</p>
-          <p><button class="w3-button w3-light-grey w3-block"><i class="fa fa-envelope"></i> Contact</button></p>
+          <h3>K.H.NG</h3>
+          <p class="w3-opacity">I.T. Consultant</p>
+          <p>Phone: +6012-2762225</p>
+          <p><a href="https://api.whatsapp.com/send?phone=6012-2762225" class="w3-button w3-light-grey w3-block"><i class="fa fa-envelope"></i> Contact</a></p>
         </div>
       </div>
     </div>
     <div class="w3-col l3 m6 w3-margin-bottom">
       <div class="w3-card">
-        <img src="/w3images/team1.jpg" alt="Jane" style="width:100%">
+        <img src="C:\Users\User\Desktop\nasilemak\website\hang.jpg" alt="Hang Wong" style="width:100%">
         <div class="w3-container">
-          <h3>Anja Doe</h3>
-          <p class="w3-opacity">Art Director</p>
-          <p>Phasellus eget enim eu lectus faucibus vestibulum. Suspendisse sodales pellentesque elementum.</p>
-          <p><button class="w3-button w3-light-grey w3-block"><i class="fa fa-envelope"></i> Contact</button></p>
+          <h3>Hang Wong</h3>
+          <p class="w3-opacity">I.T. Consultant</p>
+          <p>Phone: +65-96571377</p>
+          <p><a href="https://api.whatsapp.com/send?phone=65-96571377" class="w3-button w3-light-grey w3-block"><i class="fa fa-envelope"></i> Contact</a></p>
         </div>
       </div>
     </div>
     <div class="w3-col l3 m6 w3-margin-bottom">
       <div class="w3-card">
-        <img src="/w3images/team3.jpg" alt="Mike" style="width:100%">
+        <img src="C:\Users\User\Desktop\nasilemak\website\hang.jpg" alt="Garry Ong" style="width:100%">
         <div class="w3-container">
-          <h3>Mike Ross</h3>
-          <p class="w3-opacity">Web Designer</p>
-          <p>Phasellus eget enim eu lectus faucibus vestibulum. Suspendisse sodales pellentesque elementum.</p>
-          <p><button class="w3-button w3-light-grey w3-block"><i class="fa fa-envelope"></i> Contact</button></p>
+          <h3>Garry Ong</h3>
+          <p class="w3-opacity">Support Engineer</p>
+          <p>Phone: +6012-2508338</p>
+          <p><a href="https://api.whatsapp.com/send?phone=6012-2508338" class="w3-button w3-light-grey w3-block"><i class="fa fa-envelope"></i> Contact</a></p>
         </div>
       </div>
     </div>
     <div class="w3-col l3 m6 w3-margin-bottom">
       <div class="w3-card">
-        <img src="/w3images/team4.jpg" alt="Dan" style="width:100%">
+        <img src="C:\Users\User\Desktop\nasilemak\website\hang.jpg" alt="Desmond Ng" style="width:100%">
         <div class="w3-container">
-          <h3>Dan Star</h3>
-          <p class="w3-opacity">Designer</p>
-          <p>Phasellus eget enim eu lectus faucibus vestibulum. Suspendisse sodales pellentesque elementum.</p>
-          <p><button class="w3-button w3-light-grey w3-block"><i class="fa fa-envelope"></i> Contact</button></p>
+          <h3>Desmond Ng</h3>
+          <p class="w3-opacity">Support Engineer</p>
+          <p>Phone: +6017-2115637</p>
+          <p><a href="https://api.whatsapp.com/send?phone=6017-2115637" class="w3-button w3-light-grey w3-block"><i class="fa fa-envelope"></i> Contact</a></p>
         </div>
       </div>
     </div>
@@ -190,39 +339,96 @@ body, html {
   </div>
 </div>
 
-<!-- Work Section -->
-<div class="w3-container" style="padding:128px 16px" id="work">
-  <h3 class="w3-center">OUR WORK</h3>
-  <p class="w3-center w3-large">What we've done for people</p>
+<!-- Products Section -->
+<div class="w3-container w3-grey" style="padding:46px 16px" id="work">
+  <h3 class="w3-center">OUR PRODUCTS</h3>
+  <p class="w3-center w3-large">Our company involves supply of high quality products and reasonable pricing for our client in some brand of products & services to our clients. We carry a wide variety range of products & services for our client flexibility in choosing the choices of their own.</p>
 
   <div class="w3-row-padding" style="margin-top:64px">
     <div class="w3-col l3 m6">
-      <img src="/w3images/tech_mic.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="A microphone">
+      <img src="C:\Users\User\Desktop\nasilemak\website\hpproliantserver.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="HP Proliant Gen10 Server - Complete range for all size server. Compact yet powerful towers; space-saving, versatile racks.">
     </div>
     <div class="w3-col l3 m6">
-      <img src="/w3images/tech_phone.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="A phone">
+      <img src="C:\Users\User\Desktop\nasilemak\website\hpnetworking.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="HP Networking - delivers a single, simple network that’s more reliable, easier to manage and upgrade, and more affordable.">
     </div>
     <div class="w3-col l3 m6">
-      <img src="/w3images/tech_drone.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="A drone">
+      <img src="C:\Users\User\Desktop\nasilemak\website\hpworkstation.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="HP Workstation - with next-generation Intel® Xeon® processor families, the latest graphics technology, and increased I/O expandability.">
     </div>
     <div class="w3-col l3 m6">
-      <img src="/w3images/tech_sound.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Soundbox">
+      <img src="C:\Users\User\Desktop\nasilemak\website\hpbusinessprinter.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="HP Printer - professional-quality print, copy and scanning capabilities for businesses with Officejet and LaserJet Printers.
+      ">
     </div>
   </div>
 
-  <div class="w3-row-padding w3-section">
+  <div class="w3-row-padding" style="margin-top:16px">
     <div class="w3-col l3 m6">
-      <img src="/w3images/tech_tablet.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="A tablet">
+      <img src="C:\Users\User\Desktop\nasilemak\website\qctenterpriseserver.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="QCT Enterprise Server - 1U/2U/4U general-purpose servers, multi-node high-density servers, and 4-way high-end business critical servers.">
     </div>
     <div class="w3-col l3 m6">
-      <img src="/w3images/tech_camera.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="A camera">
+      <img src="C:\Users\User\Desktop\nasilemak\website\qsanunifiedstorage.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Qsan Unified Storage - Enterprise grade feature and SMB friendly price, the industry-leading XCubeNXT is the best unified storage for SMB.">
     </div>
     <div class="w3-col l3 m6">
-      <img src="/w3images/tech_typewriter.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="A typewriter">
+      <img src="C:\Users\User\Desktop\nasilemak\website\fortinetfirewall.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Fortinet Fortigate - Next Generation Firewall (NGFW/NGIPS) Better Security, More Control and 5 Times Faster Performance.">
     </div>
     <div class="w3-col l3 m6">
-      <img src="/w3images/tech_tableturner.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="A tableturner">
+      <img src="C:\Users\User\Desktop\nasilemak\website\fortinetnetworking.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Fortinet Networking - secure access switches and access points deliver superior security, performance, and manageability for your business.">
     </div>
+  </div>
+
+  <div class="w3-row-padding" style="margin-top:16px">
+    <div class="w3-col l3 m6">
+      <img src="C:\Users\User\Desktop\nasilemak\website\ubiquitinetworking.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Ubiquiti Network - Enterprise performance, unlimited scalability, a central management controller and disruptive pricing.
+      ">
+    </div>
+    <div class="w3-col l3 m6">
+      <img src="C:\Users\User\Desktop\nasilemak\website\3cxiptelephony.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="3CX IP Telephony - 3CX Phone System is a software-based, open standards IP PBX that offers complete Unified Communications, out of the box.">
+    </div>
+    <div class="w3-col l3 m6">
+      <img src="C:\Users\User\Desktop\nasilemak\website\yealinkvoicesolution.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Yealink Voice - Unified Communications terminal solutions unify voice, video and collaboration, and are designed for businesses of all sizes.">
+    </div>
+    <div class="w3-col l3 m6">
+      <img src="C:\Users\User\Desktop\nasilemak\website\yealinkvideosolution.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Yealink Video - In the modern workplace, organization employees tend to do communication and collaboration with video meeting.">
+    </div>
+  </div>
+
+  <div class="w3-row-padding" style="margin-top:16px">
+    <div class="w3-col l3 m6">
+      <img src="C:\Users\User\Desktop\nasilemak\website\yealinkheadset.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Yealink Headset - designed for Unified Communication, featuring high-quality audio and exceptional wearing comfort
+      ">
+    </div>
+    <div class="w3-col l3 m6">
+      <img src="C:\Users\User\Desktop\nasilemak\website\yeastarvoipgateways.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Yeastar VOIP Gateways - bridge the gap between FXS, FXO, PRI, BRI, GSM, CDMA, UMTS, and IP networks.
+      ">
+    </div>
+    <div class="w3-col l3 m6">
+      <img src="C:\Users\User\Desktop\nasilemak\website\2nipintercomsdoorphone.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="2N IP Intercoms - excels in its luxury design, we can boldly declare that you’ll find nothing like it on the IP intercom market">
+    </div>
+    <div class="w3-col l3 m6">
+      <img src="C:\Users\User\Desktop\nasilemak\website\vivotekipsurveillance.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Vivotek - software, hardware and ultimately create comprehensive surveillance solutions that meet the diversified needs of different users
+      ">
+    </div>
+  </div>
+
+  <div class="w3-row-padding" style="margin-top:16px">
+    <div class="w3-col l3 m6">
+      <img src="C:\Users\User\Desktop\nasilemak\website\microenginedooraccess.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Microengine - specially designed with proven and advanced reliable technology that operates by very powerful software and provides great flexibility.">
+    </div>
+    <div class="w3-col l3 m6">
+      <img src="C:\Users\User\Desktop\nasilemak\website\apcupsbatterybackup.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="APC Uninterruptible Power Supply (UPS) - High Performance Computer and Electronics UPS for Premium Power Protection.">
+    </div>
+    <div class="w3-col l3 m6">
+      <img src="C:\Users\User\Desktop\nasilemak\website\seculetteremailsecurity.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="SuceLetter - cloud based advanced email security solution again zero-day attack, ransomware, phishing, unknows threats intiated through email.">
+    </div>
+    <div class="w3-col l3 m6">
+      <img src="C:\Users\User\Desktop\nasilemak\website\exosphereendpointsecurity.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Exosphere Endpoint - is the simplest, most comprehensive endpoint security solution for all of your business needs">
+    </div>
+  </div>
+
+  <div class="w3-row-padding" style="margin-top:16px">
+    <div class="w3-col l3 m6">
+      <img src="C:\Users\User\Desktop\nasilemak\website\avgbusinesssecurity.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="AVG Business Antivirus - Designed to protect your critical business and customer data by securing your business PC's, laptops and file servers.">
+    </div>
+    
   </div>
 </div>
 
@@ -235,111 +441,143 @@ body, html {
   </div>
 </div>
 
-<!-- Skills Section -->
-<div class="w3-container w3-light-grey w3-padding-64">
-  <div class="w3-row-padding">
-    <div class="w3-col m6">
-      <h3>Our Skills.</h3>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod<br>
-      tempor incididunt ut labore et dolore.</p>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod<br>
-      tempor incididunt ut labore et dolore.</p>
-    </div>
-    <div class="w3-col m6">
-      <p class="w3-wide"><i class="fa fa-camera w3-margin-right"></i>Photography</p>
-      <div class="w3-grey">
-        <div class="w3-container w3-dark-grey w3-center" style="width:90%">90%</div>
-      </div>
-      <p class="w3-wide"><i class="fa fa-desktop w3-margin-right"></i>Web Design</p>
-      <div class="w3-grey">
-        <div class="w3-container w3-dark-grey w3-center" style="width:85%">85%</div>
-      </div>
-      <p class="w3-wide"><i class="fa fa-photo w3-margin-right"></i>Photoshop</p>
-      <div class="w3-grey">
-        <div class="w3-container w3-dark-grey w3-center" style="width:75%">75%</div>
-      </div>
-    </div>
-  </div>
-</div>
 
-<!-- Pricing Section -->
-<div class="w3-container w3-center w3-dark-grey" style="padding:128px 16px" id="pricing">
-  <h3>PRICING</h3>
-  <p class="w3-large">Choose a pricing plan that fits your needs.</p>
-  <div class="w3-row-padding" style="margin-top:64px">
+
+<!-- Services Section -->
+<div class="w3-container w3-center w3-dark-grey" style="padding:46px 16px" id="pricing">
+  
+  <h3>SERVICES</h3>
+  <p class="w3-large">Services that fit your needs.</p>
+  <div class="w3-row-padding" style="margin-top:64px" >
+    
     <div class="w3-third w3-section">
-      <ul class="w3-ul w3-white w3-hover-shadow">
-        <li class="w3-black w3-xlarge w3-padding-32">Basic</li>
-        <li class="w3-padding-16"><b>10GB</b> Storage</li>
-        <li class="w3-padding-16"><b>10</b> Emails</li>
-        <li class="w3-padding-16"><b>10</b> Domains</li>
-        <li class="w3-padding-16"><b>Endless</b> Support</li>
-        <li class="w3-padding-16">
-          <h2 class="w3-wide">$ 10</h2>
-          <span class="w3-opacity">per month</span>
-        </li>
+      <ul class="w3-ul w3-white w3-hover-shadow" >
+        <li class="w3-black w3-xlarge w3-padding-24 frame-height">Hardware Setup, Troubleshooting, Repair and Support</li>
+        <li class="w3-padding-24">We provide computer hardware setup installation for any new purchase and troubleshooting or repair in other computer hardware. For example repair printer, desktop, notebook and etc.</li>
+        
         <li class="w3-light-grey w3-padding-24">
-          <button class="w3-button w3-black w3-padding-large">Sign Up</button>
-        </li>
-      </ul>
-    </div>
-    <div class="w3-third">
-      <ul class="w3-ul w3-white w3-hover-shadow">
-        <li class="w3-red w3-xlarge w3-padding-48">Pro</li>
-        <li class="w3-padding-16"><b>25GB</b> Storage</li>
-        <li class="w3-padding-16"><b>25</b> Emails</li>
-        <li class="w3-padding-16"><b>25</b> Domains</li>
-        <li class="w3-padding-16"><b>Endless</b> Support</li>
-        <li class="w3-padding-16">
-          <h2 class="w3-wide">$ 25</h2>
-          <span class="w3-opacity">per month</span>
-        </li>
-        <li class="w3-light-grey w3-padding-24">
-          <button class="w3-button w3-black w3-padding-large">Sign Up</button>
+          <a href ="#contact" class="w3-button w3-black w3-padding-large">MORE</a>
+            
+          
         </li>
       </ul>
     </div>
     <div class="w3-third w3-section">
       <ul class="w3-ul w3-white w3-hover-shadow">
-        <li class="w3-black w3-xlarge w3-padding-32">Premium</li>
-        <li class="w3-padding-16"><b>50GB</b> Storage</li>
-        <li class="w3-padding-16"><b>50</b> Emails</li>
-        <li class="w3-padding-16"><b>50</b> Domains</li>
-        <li class="w3-padding-16"><b>Endless</b> Support</li>
-        <li class="w3-padding-16">
-          <h2 class="w3-wide">$ 50</h2>
-          <span class="w3-opacity">per month</span>
-        </li>
+        <li class="w3-black w3-xlarge w3-padding-24 frame-height">Software Installation and Support<br><br></li>
+        <li class="w3-padding-24">You need some one to help you install software application for you? Such as Microsoft, Adobe and Accounting application. We can help you!<br><br></li>
+        
         <li class="w3-light-grey w3-padding-24">
-          <button class="w3-button w3-black w3-padding-large">Sign Up</button>
+          <a href ="#contact" class="w3-button w3-black w3-padding-large">MORE</a>
         </li>
       </ul>
     </div>
+    <div class="w3-third w3-section">
+      <ul class="w3-ul w3-white w3-hover-shadow">
+        <li class="w3-black w3-xlarge w3-padding-24 frame-height">Hardware Upgrades<br><br></li>
+        <li class="w3-padding-24">What do you need to do when you feel your computer is running slow? You can upgrade your computer to get better preferment without purchase new machine. Let us upgrade for you now....</li>
+        
+        <li class="w3-light-grey w3-padding-24">
+          <a href ="#contact" class="w3-button w3-black w3-padding-large">MORE</a>
+        </li>
+      </ul>
+    </div>
+
+    <div class="w3-third w3-section">
+      <ul class="w3-ul w3-white w3-hover-shadow" >
+        <li class="w3-black w3-xlarge w3-padding-24 frame-height">Internet Security and Virus Protection</li>
+        <li class="w3-padding-24">NKH Solution is able to solve your company internet security and virus protection issue with provide Firewall and Antivirus tools to protect your office computer.</li>
+        
+        <li class="w3-light-grey w3-padding-24">
+          <a href ="#contact" class="w3-button w3-black w3-padding-large">MORE</a>
+        </li>
+      </ul>
+    </div>
+    <div class="w3-third w3-section">
+      <ul class="w3-ul w3-white w3-hover-shadow">
+        <li class="w3-black w3-xlarge w3-padding-24 frame-height">Broadband Internet and SIP Trunk Registration</li>
+        <li class="w3-padding-24">Need broadband internet and telephone SIP Trunk service? NKH Solution can provide new or upgrade ISP registration service for you.<br></li>
+        
+        <li class="w3-light-grey w3-padding-24">
+          <a href ="#contact" class="w3-button w3-black w3-padding-large">MORE</a>
+        </li>
+      </ul>
+    </div>
+    <div class="w3-third w3-section" style="display: inline-block;">
+      <ul class="w3-ul w3-white w3-hover-shadow">
+        <li class="w3-black w3-xlarge w3-padding-24 frame-height">Email and Internet Domain Setup<br><br></li>
+        <li class="w3-padding-24">Our support team can help you to setup email in SMTP mail application and web hosting or domain registration.<br></li>
+        
+        <li class="w3-light-grey w3-padding-24">
+          <a href ="#contact" class="w3-button w3-black w3-padding-large">MORE</a>
+        </li>
+      </ul>
+    </div>
+    
+    
+
+    <div class="w3-third w3-section" style="display: inline-block; clear: both;">
+      <ul class="w3-ul w3-white w3-hover-shadow" >
+        <li class="w3-black w3-xlarge w3-padding-24">IT Advice and Consulting</li>
+        <li class="w3-padding-16">We offer IT advice and consultant for your office to help you setup a high productivity and secure IT environment to reduce your total built up cost. Contact us now!</li>
+        
+        <li class="w3-light-grey w3-padding-24">
+          <a href ="#contact" class="w3-button w3-black w3-padding-large">MORE</a>
+        </li>
+      </ul>
+    </div>
+    <div class="w3-third w3-section">
+      <ul class="w3-ul w3-white w3-hover-shadow">
+        <li class="w3-black w3-xlarge w3-padding-24">Networking and Cabling</li>
+        <li class="w3-padding-16">How do you built your office networking solution? Our support team will help you create a standard and secure networking with selected tools for you. We have professional cabling team to help you to lay your office or home network cabling. Beside that, we have provide other cabling for example IP telephone, IP CCTV and power point cabling.</li>
+        
+        <li class="w3-light-grey w3-padding-24">
+          <a href ="#contact" class="w3-button w3-black w3-padding-large">MORE</a>
+        </li>
+      </ul>
+    </div>
+    <div class="w3-third w3-section">
+      <ul class="w3-ul w3-white w3-hover-shadow">
+        <li class="w3-black w3-xlarge w3-padding-24">Security Solution</li>
+        <li class="w3-padding-16">Beside IT service and solution, NKH Solution also provide security solution such as IP alarm system, IP door access and IP closed-circuit television CCTV to help you to take care and monitoring your office asset. This can reduce your risk and more sucure.</li>
+        
+        <li class="w3-light-grey w3-padding-24">
+          <a href ="#contact" class="w3-button w3-black w3-padding-large">MORE</a>
+        </li>
+      </ul>
+    </div>
+
+    
   </div>
 </div>
 
 <!-- Contact Section -->
-<div class="w3-container w3-light-grey" style="padding:128px 16px" id="contact">
+<div class="w3-container w3-light-grey" style="padding:46px 16px" id="contact">
   <h3 class="w3-center">CONTACT</h3>
   <p class="w3-center w3-large">Lets get in touch. Send us a message:</p>
   <div style="margin-top:48px">
-    <p><i class="fa fa-map-marker fa-fw w3-xxlarge w3-margin-right"></i> Chicago, US</p>
-    <p><i class="fa fa-phone fa-fw w3-xxlarge w3-margin-right"></i> Phone: +00 151515</p>
-    <p><i class="fa fa-envelope fa-fw w3-xxlarge w3-margin-right"> </i> Email: mail@mail.com</p>
+    <p><i class="fa fa-map-marker fa-fw w3-xxlarge w3-margin-right"></i> 5A-4, Block F1, Jalan PJU 1/42, Dataran Prima, 47301, Petaling Jaya, Selangor, Malaysia</p>
+    <p><i class="fa fa-phone fa-fw w3-xxlarge w3-margin-right"></i> Phone: +603-7666 0000</p>
+    <p><i class="fa fa-envelope fa-fw w3-xxlarge w3-margin-right"> </i> Email: enquiry@nkhsolution.com</p>
     <br>
-    <form action="/action_page.php" target="_blank">
-      <p><input class="w3-input w3-border" type="text" placeholder="Name" required name="Name"></p>
-      <p><input class="w3-input w3-border" type="text" placeholder="Email" required name="Email"></p>
-      <p><input class="w3-input w3-border" type="text" placeholder="Subject" required name="Subject"></p>
-      <p><input class="w3-input w3-border" type="text" placeholder="Message" required name="Message"></p>
+
+    
+    <form action="https://formsubmit.co/tingwei2503@email.com" method="POST">
+      <p><input class="w3-input w3-border" type="text" id="name" placeholder="Name" required name="Name"></p>
+      <p><input class="w3-input w3-border" type="email" id="email" placeholder="Email" required name="Email"></p>
+      <p><input class="w3-input w3-border" type="text" id="subject" placeholder="Subject" required name="Subject"></p>
+      <p><input class="w3-input w3-border" type="text" id="message" placeholder="Message" required name="Message"></p>
       <p>
         <button class="w3-button w3-black" type="submit">
           <i class="fa fa-paper-plane"></i> SEND MESSAGE
         </button>
       </p>
     </form>
+    <!--<div id="status" class="success">Success</div>-->
     <!-- Image of location/map -->
-    <img src="/w3images/map.jpg" class="w3-image w3-greyscale" style="width:100%;margin-top:48px">
+  
+    <p><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3983.9168578106596!2d101.59309211395149!3d3.1166959977305075!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31cc4ea1a35acea5%3A0x5e19c856425c5958!2sNKH%20Solution%20Sdn.%20Bhd.!5e0!3m2!1sen!2smy!4v1643095513153!5m2!1sen!2smy" width="1350" height="400" style="border:0;" allowfullscreen="" loading="lazy"></iframe></p>
+
   </div>
 </div>
 
@@ -349,15 +587,16 @@ body, html {
   <div class="w3-xlarge w3-section">
     <i class="fa fa-facebook-official w3-hover-opacity"></i>
     <i class="fa fa-instagram w3-hover-opacity"></i>
-    <i class="fa fa-snapchat w3-hover-opacity"></i>
-    <i class="fa fa-pinterest-p w3-hover-opacity"></i>
-    <i class="fa fa-twitter w3-hover-opacity"></i>
-    <i class="fa fa-linkedin w3-hover-opacity"></i>
+    <a href="https://api.whatsapp.com/send?phone=15551234567" class="fa fa-snapchat w3-hover-opacity"></a>
+    <a href="https://www.youtube.com/watch?v=MNn9DnbbZpw" class="fa fa-youtube w3-hover-opacity"></a>
+    <a href="https://my.linkedin.com/in/ngkahho" class="fa fa-linkedin w3-hover-opacity"></a>
+    
   </div>
-  <p>Powered by <a href="https://www.w3schools.com/w3css/default.asp" title="W3.CSS" target="_blank" class="w3-hover-text-green">w3.css</a></p>
+  <p>Copyright &#169; NKH Solution 2022</a></p>
 </footer>
  
 <script>
+
 // Modal Image Gallery
 function onClick(element) {
   document.getElementById("img01").src = element.src;
@@ -383,6 +622,8 @@ function w3_close() {
     mySidebar.style.display = "none";
 }
 </script>
+
+
 
 </body>
 </html>
